@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A simple interactive task manager.">
+    <title>TaskFlow | To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="app">
+        <header class="app-header">
+            <p class="eyebrow">YOUR PERSONAL WORKSPACE</p>
+            <h1>TaskFlow</h1>
+            <p class="subtitle">Organize your day, one task at a time.</p>
+        </header>
+
+        <section class="task-panel">
+            <form id="task-form">
+                <label for="task-input">Add a new task</label>
+                <div class="task-entry">
+                    <input
+                        type="text"
+                        id="task-input"
+                        placeholder="What needs to get done?"
+                        maxlength="150"
+                        required
+                    >
+                    <button type="submit" class="primary-btn">Add Task</button>
+                </div>
+            </form>
+
+            <div class="task-summary">
+                <span id="task-count">0 tasks remaining</span>
+                <button type="button" id="clear-completed" class="text-btn">
+                    Clear completed
+                </button>
+            </div>
+
+            <nav class="filters" aria-label="Filter tasks">
+                <button type="button" class="filter-btn active" data-filter="all">
+                    All
+                </button>
+                <button type="button" class="filter-btn" data-filter="active">
+                    Active
+                </button>
+                <button type="button" class="filter-btn" data-filter="completed">
+                    Completed
+                </button>
+            </nav>
+
+            <ul id="task-list" aria-label="Your tasks"></ul>
+
+            <p id="empty-message" class="empty-message">
+                No tasks yet. Add your first task above!
+            </p>
+        </section>
+
+        <footer>
+            <p>Small steps lead to big achievements.</p>
+            <p>TaskFlow &copy; <span id="year"></span></p>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
